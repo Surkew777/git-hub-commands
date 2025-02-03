@@ -1,0 +1,32 @@
+ssh-keygen -t ed25519 -C "your-email@example.com"
+  573  cat /home/linuxuser/.shh/id_ed25519
+  574  cat /home/linuxuser/.shh/id_ed25519.pub
+  575  cat /home/linuxuser/.ssh/id_ed25519.pub
+  576  ssh -T git@github.com
+  577  ls .git
+  578  rm -rf .git
+  579  ls
+  580  git init
+  581  ls
+  582  git status
+  583  git add .
+  584  git commit -m 'Flask Exp'
+  585  git  status
+  586  git remote add origin git@github.com:Surkew777/Flask-Exp.git
+  587  git branch -M main
+  588  git oush -u origin 
+  589  git push -u origin 
+  590  git status
+  591      git push --set-upstream origin main
+  592  git push -u origin 
+  593  ls
+  594  touch mess_up_da_flow
+  595  git status
+  596  git add mess_up_da_flow 
+  597  git status
+  598  git push -u origin 
+  599  git commit -m 
+  600  git commit
+  601  git commit -m 'exp mess up'
+  602  git push -u origin 
+  603  history
