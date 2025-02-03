@@ -30,3 +30,32 @@ ssh-keygen -t ed25519 -C "your-email@example.com"
   601  git commit -m 'exp mess up'
   602  git push -u origin 
   603  history
+
+
+######## 
+
+So create a ssh key  ssh-keygen -t ed25519    # this says create a key with t ed25519 algorithm 
+paste that into git hub  ssh create new key 
+
+next initiate your git inside the folder you wanna commit 
+
+add everything or use .gitignore file and add files you want ignored, virtual environement and other unneccesary files 
+
+commit the changes 
+
+next 
+
+add the url with the git repo name 
+
+git remote add origin <githib.com/username/github_repo_name # three parameters that's it 
+
+next 
+git branch -M main
+
+You are supposed to run git push -u origin # this will however tell you that you do not have an upstream 
+
+so run 
+
+git push --set-upstream origin main  
+
+this is how you will make your initial commit , then after that, you can run git push -u origin as normal
