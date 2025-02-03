@@ -59,3 +59,104 @@ so run
 git push --set-upstream origin main  
 
 this is how you will make your initial commit , then after that, you can run git push -u origin as normal
+
+
+##########  an interesting problem we came  across  
+
+when making manual changes to repos on github, You will run onto problems git hub will complain about 
+
+
+The issue you're encountering is related to divergent branches. Specifically, your local branch is behind the remote branch, meaning there are commits on the remote repository that you don’t have locally.
+
+Here’s how to resolve the issue:
+
+Step 1: Fetch and Rebase
+Since you configured git config pull.rebase true, Git will attempt to rebase the changes when you pull. This is good for keeping a clean commit history. But it looks like you still need to reconcile the divergence properly.
+
+Pull the latest changes with rebase:
+
+bash
+Copy
+Edit
+git pull --rebase origin main
+This command will:
+
+Fetch changes from the remote main branch.
+Rebase your local changes on top of the changes from the remote.
+If there are merge conflicts, Git will notify you, and you’ll need to manually resolve them. After resolving conflicts, run:
+
+bash
+Copy
+Edit
+git add <resolved-file>
+git rebase --continue
+Step 2: Push Your Changes
+Once you’ve successfully rebased and resolved any conflicts, push your changes to the remote repository:
+
+bash
+Copy
+Edit
+git push origin main
+This will update the remote with your changes.
+
+If you prefer to merge (instead of rebase):
+If you’d prefer merging instead of rebasing, you can set Git to merge automatically when pulling by using:
+
+bash
+Copy
+Edit
+git config pull.rebase false
+Then run git pull and resolve any merge conflicts manually. Afterward, you can push again.
+
+Summary of Commands:
+To rebase and pull changes:
+bash
+Copy
+Edit
+git pull --rebase origin main
+To resolve conflicts (if needed):
+bash
+Copy
+Edit
+git add <resolved-file>
+git rebase --continue
+To push your changes:
+bash
+Copy
+Edit
+git push origin main
+Try this out and let me know if you run into any issues!
+
+
+
+
+
+
+
+
+You said:
+git pull --rebase origin main
+From github.com:Surkew777/git-hub-commands
+ * branch            main       -> FETCH_HEAD
+Successfully rebased and updated refs/heads/main.
+ChatGPT said:
+ChatGPT
+Great! It looks like you successfully rebased your local branch onto the remote main branch.
+
+Now, you should be able to push your changes:
+Push the changes to GitHub:
+bash
+Copy
+Edit
+git push origin main
+This should now successfully push your local commits to the remote repository on GitHub without any issues. 🎉
+
+Let me know if everything works as expected!
+
+
+
+
+
+
+
+
